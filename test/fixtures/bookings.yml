@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_date: 2018-02-26
+  end_date: 2018-02-26
+  rental_price: 1
+  user: one
+  bike: one
+
+two:
+  start_date: 2018-02-26
+  end_date: 2018-02-26
+  rental_price: 1
+  user: two
+  bike: two
