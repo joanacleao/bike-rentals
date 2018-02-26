@@ -1,0 +1,6 @@
+<h1>Bikes#search</h1>
+
+
+<% @bikes.each do |bike| %>
+<p><%= link_to bike.brand, bike_path(bike)%></p>
+<% end %>
