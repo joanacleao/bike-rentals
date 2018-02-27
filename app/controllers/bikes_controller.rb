@@ -23,9 +23,16 @@ class BikesController < ApplicationController
 
   def search
 
-    search = params[:search]
     #raise
-    @bikes = Bike.where(spec: search)
+    @bikes = Bike.all
+    search = params[:search]
+
+
+    if search == ""
+      @bikes = Bike.all
+    else
+      @bikes = @bikes.where(spec: search)
+    end
 
 
   end

@@ -1,0 +1,83 @@
+.results {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+
+.card-search {
+  height: 370px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-position: center;
+  color: white;
+  position: relative;
+}
+.card-user {
+  position: absolute;
+  right: 10px;
+  bottom: 50px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+
+.card-photo{
+
+  height: 270px;
+  background-size:  cover;
+}
+
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.card-description {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  background-color: white;
+  height: 100px;
+  width:100%;
+  color: black;
+}
+.card-description a {
+  color: black;
+}
+
+.card-description h2 {
+  font-size: 15px;
+}
+
+.card-description h1 {
+  font-size: 15px;
+  margin:0px;
+  margin-bottom: 5px;
+}
+.card-description p {
+  font-size: 15px;
+  opacity: 0.7;
+  font-weight: lighter;
+  color:black;
+}
+
+.brand {
+  font-size: 10px !important;
+  color:black;
+  margin-bottom: 0px;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover {
+  opacity: 0.1;
+}
