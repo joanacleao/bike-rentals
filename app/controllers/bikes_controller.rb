@@ -4,9 +4,11 @@ class BikesController < ApplicationController
   end
 
   def new
+    @bike = Bike.new
   end
 
   def create
+    @bike=Bike.new(bike_params)
   end
 
   def edit
@@ -32,7 +34,11 @@ class BikesController < ApplicationController
   def destroy
   end
 
+  private
 
+  def bike_params
+    params.require(:bike).permit(:brand, :description, :city, :address, :price, :spec)
+  end
 
 
 end
