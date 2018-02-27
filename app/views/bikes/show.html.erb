@@ -1,9 +1,69 @@
-<h1>Bikes#show</h1>
-<p>Find me in app/views/bikes/show.html.erb</p>
+<div class="text-center">
+  <h2><%=@bike.brand %> from user_id: <%= @bike.user_id %></h2>
+</div>
 
-<%= @bike.brand %>
+<%= render 'banner-show' %>
 
-<%= link_to "Back", bikes_search_path  %>
+<div class="container">
+  <div class="bike-profile text-center">
+    <div class="main">
+      <div class="main-content">
+          <h2><%=@bike.brand %> from user_id: <%= @bike.user_id %></h2>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <h5 class="card-title">Spec: <%= @bike.spec %></h5>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h5 class="card-title">Brand: <%= @bike.brand %></h5>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h5 class="card-title">Owner email: <%= @bike.user.email %></h5>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h5 class="card-title">Bike description: <%= @bike.description %></h5>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h5 class="card-title">City: <%= @bike.city %></h5>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h5 class="card-title">Address: <%= @bike.address %></h5>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h5 class="card-title">Price/day <%= @bike.price %></h5>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
-<!-- ver como bikes_search_path pode direccionar para a pesquisa que foi feita  -->
+      </div>
+    </div>
+    <div class="booking">
+      <div class="booking-content">
+        <h3>Booking Form</h3>
+        <p class="text-justify">
+          Booking content
+        </p>
+        <a href="" class="btn btn-primary">Book</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center">
+  <a href="<%=bikes_search_path%>" class="btn btn-primary">Back</a>
+</div>
 
