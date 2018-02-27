@@ -1,0 +1,22 @@
+<div class="results">
+  <div class="row">
+    <% @bikes.each do |bike| %>
+    <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+        <div class="card-search">
+          <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://www.bricklanebikes.co.uk/content/images/thumbs/0030350_2018-6ku-fixie-single-speed-bike-beach-bum_1200.jpeg');"></div>
+          <div class="card-description">
+            <p><strong><%= bike.spec.upcase%> . <%= bike.city%></strong></p>
+            <h1><%= bike.description%> <p class="brand"><%= link_to bike.brand, bike_path(bike)%></p></h1>
+            <p><%=bike.price %> € per day</p>
+          </div>
+          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+          <a class="card-link" href="#" ></a>
+        </div>
+      </div>
+       <%end  %>
+    </div>
+  </div>
+
+
+
