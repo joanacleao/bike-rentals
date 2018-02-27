@@ -1,3 +1,27 @@
+
+.card-experience {
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  margin-bottom: 50px;
+  padding: 0px 10px;
+  border-radius:8px;
+  h1 {
+    font-size: 25px;
+  }
+}
+
+.card-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  border-radius: 50%;
+}
+
 .results {
   margin-left: 30px;
   margin-right: 30px;
@@ -11,17 +35,9 @@
   color: white;
   position: relative;
 }
-.card-user {
-  position: absolute;
-  right: 10px;
-  bottom: 50px;
-  width: 40px;
-  border-radius: 50%;
-}
 
 
 .card-photo{
-
   height: 270px;
   background-size:  cover;
 }
@@ -30,9 +46,18 @@
   position: absolute;
   top: 10px;
   left: 10px;
-  font-size: 15px;
+  font-size: 10px;
   text-transform: uppercase;
 }
+.card-description-experience {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.card-description h2 {
+  font-size: 15px;
+}
+
 .card-description {
   position: absolute;
   bottom: 0px;
@@ -44,10 +69,6 @@
 }
 .card-description a {
   color: black;
-}
-
-.card-description h2 {
-  font-size: 15px;
 }
 
 .card-description h1 {
