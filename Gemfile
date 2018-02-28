@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.4.3'
+gem "geocoder"
 gem 'jquery-rails'
 gem 'devise'
 gem 'figaro'
