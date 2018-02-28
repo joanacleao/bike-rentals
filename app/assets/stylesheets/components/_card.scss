@@ -17,10 +17,19 @@
 .card-user {
   position: absolute;
   right: 10px;
-  top: 10px;
+  bottom: 50px;
   width: 40px;
   border-radius: 50%;
 }
+
+.card-stars{
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+
+
+}
+
 
 .results {
   margin-left: 30px;
@@ -34,12 +43,22 @@
   background-position: center;
   color: white;
   position: relative;
+  margin-bottom: 30px;
 }
 
 
 .card-photo{
   height: 270px;
-  background-size:  cover;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-size: cover !important;
+  background-position: center;
+
+}
+
+.img {
+  max-width: 100%;
 }
 
 .card-category {
