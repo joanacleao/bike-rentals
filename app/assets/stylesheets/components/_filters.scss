@@ -1,6 +1,7 @@
 .filters {
   display:flex;
   align-items: center;
+  justify-content: space-between;
   padding: 5px;
   background: white;
   border-top: 1px solid #f4f4f4;
@@ -10,7 +11,7 @@
 
 .filters-btn{
   margin-left: 20px;
-margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 
@@ -32,4 +33,7 @@ margin-bottom: 5px;
   border: 1px solid white;
 
 }
+
+
+
 
