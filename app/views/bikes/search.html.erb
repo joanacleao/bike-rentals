@@ -1,5 +1,10 @@
-
 <%= render 'filters' %>
-<div class="container-results">
-<%= render 'card' %>
+<div class="main-container">
+  <div class="card-container">
+    <%= render 'card' %>
+  </div>
+  <div
+  id="map"
+  data-markers="<%= @markers.to_json %>"
+  ></div>
 </div>
