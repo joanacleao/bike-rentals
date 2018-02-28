@@ -1,9 +1,51 @@
 <form action="#">
   <div class="form-group">
-    <label for="date_field">Start date</label>
-    <input type="text" placeholder="dd/mm/yyyy" id="text" class="form-control">
-    <label for="date_field">End date</label>
-    <input type="text" placeholder="dd/mm/yyyy" id="text" class="form-control">
+    <p>Start Date</p>
+    <input type="date" placeholder="dd/mm/yyyy" name="begin-date" id="begin-date" min="2018-02-25">
+    <p>End Date</p>
+    <input type="date" placeholder="dd/mm/yyyy" name="end-date" id="end-date">
+    <p id="demo"></p>
+
+    <script type="text/javascript">
+        //////Para que o valor min a inserir seja o dia de hoje
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; //January is 0!
+        var yyyy = today.getFullYear();
+         if(dd<10){
+                dd='0'+dd
+            }
+            if(mm<10){
+                mm='0'+mm
+            }
+
+        today = yyyy+'-'+mm+'-'+dd;
+        document.getElementById("begin-date").setAttribute("min", today);
+        //////
+
+
+        ///Para registar as alterações cada vez que alteramos uma das datas e calc o preço total
+        var beginDate, endDate = new Date();
+        document.getElementById('begin-date').addEventListener("change", (e) => {
+          beginDate = document.getElementById('begin-date');
+            if ((beginDate !== 0) && (endDate !== 0) && (endDate.valueAsDate > beginDate.valueAsDate)) {
+            var time = endDate.valueAsDate - beginDate.valueAsDate;
+            time = time/24/3600/1000;
+            var totalPrice = <%= @bike.price %> * time;
+            document.getElementById("demo").innerHTML ='Total Price: '+totalPrice+'&euro;';
+          }
+        });
+        document.getElementById('end-date').addEventListener("change", (e) => {
+          endDate = document.getElementById('end-date');
+          if ((beginDate !== 0) && (endDate !== 0) && (endDate.valueAsDate > beginDate.valueAsDate)) {
+            var time = endDate.valueAsDate - beginDate.valueAsDate;
+            time = time/24/3600/1000;
+            var totalPrice = <%= @bike.price %> * time;
+            document.getElementById("demo").innerHTML ='Total Price: '+totalPrice+'&euro;';
+          }
+        });
+    </script>
+
   </div>
 </form>
 
