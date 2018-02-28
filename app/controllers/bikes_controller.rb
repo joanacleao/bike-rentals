@@ -18,6 +18,12 @@ class BikesController < ApplicationController
 
   def show
     @bike = Bike.find(params[:id])
+        @markers = [{
+        lat: @bike.latitude,
+        lng: @bike.longitude
+        #,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }]
 
   end
 
@@ -44,7 +50,7 @@ class BikesController < ApplicationController
   private
 
   def bike_params
-    params.require(:bike).permit(:brand, :description, :city, :address, :price, :spec)
+    params.require(:bike).permit(:brand, :description, :city, :address, :price, :spec, :photo)
   end
 
 

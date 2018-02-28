@@ -4,17 +4,27 @@
     <div class="col-xs-12 col-sm-4">
       <!-- insert <div class="card"> -->
         <div class="card-search">
-          <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://www.bricklanebikes.co.uk/content/images/thumbs/0030350_2018-6ku-fixie-single-speed-bike-beach-bum_1200.jpeg');"></div>
+          <div class="card-photo" style="background-image: url(<%= image_path(bike.photo)%>); width: 100%">
+          </div>
           <div class="card-description">
             <p><strong><%= bike.spec.upcase%> . <%= bike.city%></strong></p>
             <h1><%= bike.description%> <p class="brand"><%= link_to bike.brand, bike_path(bike)%></p></h1>
             <p><%=bike.price %> € per day</p>
           </div>
-          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+          <img class="card-user" src="<%= image_path(bike.user.photo)%>">
+          <div class="card-stars">
+          <% stars = rand(1..5)%>
+          <% stars.times do %>
+            <i class="fa fa-star" style="color: #ffb400"></i>
+            <% end %>
+            <% (5 - stars).times do %>
+            <i class="fa fa-star" style="color: #cacccd"></i>
+            <% end %>
+            </div>
           <%= link_to "", bike_path(bike), :class => "card-link" %>
         </div>
       </div>
-       <%end  %>
+      <%end  %>
     </div>
   </div>
 
