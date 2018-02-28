@@ -30,15 +30,24 @@ class BikesController < ApplicationController
   def search
 
     #raise
-    @bikes = Bike.all
+    @bikes = Bike.where.not(latitude: nil, longitude: nil)
     search = params[:search]
 
 
-    if search == ""
-      @bikes = Bike.all
-    else
-      @bikes = @bikes.where(spec: search)
-    end
+
+      @bikes = @bikes.where(spec: search) if search.present?
+
+
+
+
+
+    @markers = @bikes.map do |bike|
+     {
+       lat: bike.latitude,
+       lng: bike.longitude,
+
+     }
+   end
 
 
   end
