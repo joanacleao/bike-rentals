@@ -8,7 +8,7 @@
 
 .bike-profile {
   display: grid;
-  grid-template-columns: 400px 1fr 1fr 1fr;
+  grid-template-columns: 300px 1fr 1fr 1fr;
   grid-template-rows: 50% 50%;
   height: calc(100vh - 260px);
   // padding: 30px;
@@ -39,4 +39,11 @@
 #demo {
   margin: 10px;
   color: #248888;
+}
+
+.booking {
+  flex: 0 0 450px;
+  height: 100vh;
+  position: sticky !important;
+  top: 0 !important;
 }
