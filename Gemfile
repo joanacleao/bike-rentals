@@ -11,7 +11,9 @@ gem 'puma'
 gem 'rails', '5.1.5'
 gem 'redis'
 gem "geocoder"
-
+gem 'carrierwave', '~> 1.2'
+gem 'mini_magick'
+gem 'fog'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
