@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180228112936) do
+ActiveRecord::Schema.define(version: 20180301110648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20180228112936) do
     t.bigint "bike_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "owner_confirmation", default: false
     t.index ["bike_id"], name: "index_bookings_on_bike_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end

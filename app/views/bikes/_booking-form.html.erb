@@ -1,9 +1,12 @@
-<form action="#">
+<!-- <form action="#"> -->
+<!--   "/bikes/1/bookings" -->
+<form action="<%= bike_bookings_path(@bike) %>"  method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <div class="form-group">
     <p>Start Date</p>
-    <input type="date" placeholder="dd/mm/yyyy" name="begin-date" id="begin-date" min="2018-02-25">
+    <input type="date" placeholder="dd/mm/yyyy" name="begindate" id="begindate" min="2018-02-25">
     <p>End Date</p>
-    <input type="date" placeholder="dd/mm/yyyy" name="end-date" id="end-date">
+    <input type="date" placeholder="dd/mm/yyyy" name="enddate" id="enddate">
     <p id="demo"></p>
 
     <script type="text/javascript">
@@ -20,14 +23,14 @@
             }
 
         today = yyyy+'-'+mm+'-'+dd;
-        document.getElementById("begin-date").setAttribute("min", today);
+        document.getElementById("begindate").setAttribute("min", today);
         //////
 
 
         ///Para registar as alterações cada vez que alteramos uma das datas e calc o preço total
         var beginDate, endDate = new Date();
-        document.getElementById('begin-date').addEventListener("change", (e) => {
-          beginDate = document.getElementById('begin-date');
+        document.getElementById('begindate').addEventListener("change", (e) => {
+          beginDate = document.getElementById('begindate');
             if ((beginDate !== 0) && (endDate !== 0) && (endDate.valueAsDate > beginDate.valueAsDate)) {
             var time = endDate.valueAsDate - beginDate.valueAsDate;
             time = time/24/3600/1000;
@@ -35,8 +38,8 @@
             document.getElementById("demo").innerHTML ='Total Price: '+totalPrice+'&euro;';
           }
         });
-        document.getElementById('end-date').addEventListener("change", (e) => {
-          endDate = document.getElementById('end-date');
+        document.getElementById('enddate').addEventListener("change", (e) => {
+          endDate = document.getElementById('enddate');
           if ((beginDate !== 0) && (endDate !== 0) && (endDate.valueAsDate > beginDate.valueAsDate)) {
             var time = endDate.valueAsDate - beginDate.valueAsDate;
             time = time/24/3600/1000;
@@ -45,7 +48,7 @@
           }
         });
     </script>
-
+  <input type="submit" class= "btn btn-primary" value="Book me">
   </div>
 </form>
 
