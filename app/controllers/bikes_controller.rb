@@ -8,13 +8,12 @@ class BikesController < ApplicationController
   end
 
   def create
-
-    @bike=Bike.new(bike_params)
-
+    @bike = Bike.new(bike_params)
+    @bike.user = current_user
     if @bike.save
-      redirect_to root_path
+      redirect_to root_path, notice: "Your bike has been created!"
     else
-      render :new
+      render :new, alert: "Could not save your bike!"
     end
   end
 

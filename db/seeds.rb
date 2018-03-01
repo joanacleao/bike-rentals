@@ -9,7 +9,7 @@
 Bike.destroy_all
 User.destroy_all
 
-user_1 = User.create(email:"sdfadsfa@gmail.com", password: 123456, photo: "http://res.cloudinary.com/dywzzd0as/image/upload/v1519818199/15787238.jpg")
+user_1 = User.create!(email:"sdfadsfa@gmail.com", password: 123456, photo: "http://res.cloudinary.com/dywzzd0as/image/upload/v1519818199/15787238.jpg")
 user_2 = User.create(email:"dadadf@hotmail.com", password: 123456, photo: "http://res.cloudinary.com/dywzzd0as/image/upload/v1519818291/185615.jpg" )
 user_3 = User.create(email:"qsajkaskj@hotmail.com", password: 123456, photo: "http://res.cloudinary.com/dywzzd0as/image/upload/v1519818337/gui.jpg" )
 
