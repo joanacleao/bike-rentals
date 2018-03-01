@@ -1,7 +1,7 @@
 <%= render 'banner-show' %>
 
 <div class="container">
-  <div class="bike-profile text-center">
+  <div class="bike-profile">
     <div class="main">
       <div class="main-content">
           <h2><%=@bike.brand %> from user_id: <%= @bike.user_id %></h2>
@@ -56,12 +56,14 @@
       </div>
     </div>
   </div>
-</div>
-
-
-<div class="container">
   <div id="map" style="width: 100%; height: 600px; margin-bottom: 10px;" data-markers="<%= @markers.to_json %>"></div>
 </div>
+
+
+
+
+
+
 
 <div class="text-center">
     <%= link_to "Back", :back, {class: "btn btn-primary"}%>
