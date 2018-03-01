@@ -62,13 +62,22 @@ class BikesController < ApplicationController
 
       end
 
-      def search
+  def search
+
+    if params[:search].present?
+      sql_query = " \
+        bikes.brand @@ :search \
+        OR bikes.city @@ :search \
+        OR bikes.spec @@ :search \
+      "
+      @bikes = Bike.where(sql_query, search: "%#{params[:search]}%")
+    else
+      @bikes = Bike.where.not(latitude: nil, longitude: nil)
+    end
 
     #raise
-    @bikes = Bike.where.not(latitude: nil, longitude: nil)
-    search = params[:search]
 
-    @bikes = @bikes.where(spec: search) if search.present?
+    search = params[:search]
 
     @markers = @bikes.map do |bike|
      {
@@ -76,13 +85,13 @@ class BikesController < ApplicationController
        lng: bike.longitude,
 
      }
-   end
+    end
 
 
- end
+  end
 
 
- def destroy
+  def destroy
 
 
     @bike = Bike.find(params[:id])
@@ -90,7 +99,7 @@ class BikesController < ApplicationController
     redirect_to bikes_mybikes_path
 
 
- end
+  end
 
  private
 
