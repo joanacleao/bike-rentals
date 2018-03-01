@@ -1,9 +1,11 @@
 class User < ApplicationRecord
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable
   devise :omniauthable, omniauth_providers: [:facebook]
     #:recoverable, :rememberable, :trackable, :validatable
+
 
   has_many :bookings
   has_many :bikes
@@ -17,6 +19,7 @@ class User < ApplicationRecord
     user_params[:token_expiry] = Time.at(auth.credentials.expires_at)
     user_params = user_params.to_h
 
+
     user = User.find_by(provider: auth.provider, uid: auth.uid)
     user ||= User.find_by(email: auth.info.email) # User did a regular sign up in the past.
     if user
@@ -29,5 +32,8 @@ class User < ApplicationRecord
 
     return user
   end
+
+  mount_uploader :photo, PhotoUploader
+
 
 end

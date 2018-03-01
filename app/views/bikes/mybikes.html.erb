@@ -1,0 +1,93 @@
+
+
+
+
+<div class="container" style= "margin-top: 80px">
+
+  <p><strong>Hello <%= current_user.id %>!</strong> </p>
+
+
+  <p>Here are your bikes: </p>
+
+  <div class="row">
+    <% @bikes.each do |bike| %>
+    <div class="col-sm-8">
+      <!-- insert <div class="card"> -->
+
+          <div class="card-bike">
+            <div class="card-bike-photo" style="background-image: url('<%= image_path(bike.photo)%>');">
+            </div>
+
+            <div class="card-bike-description">
+              <p><strong><%= bike.spec.upcase%></strong></p>
+              <p><%= bike.brand%></p>
+              <p><%= bike.description%></p>
+              <p><%= bike.address%></p>
+              <p><%=bike.price %> € per day</p>
+            </div>
+            <div class="card-bike-stars">
+              <% stars = rand(1..5)%>
+              <% stars.times do %>
+              <i class="fa fa-star" style="color: #ffb400"></i>
+              <% end %>
+              <% (5 - stars).times do %>
+              <i class="fa fa-star" style="color: #cacccd"></i>
+              <% end %>
+            </div>
+
+            <div class="card-bike-buttons">
+              <p><%= link_to "Edit", edit_bike_path(bike) %></p>
+              <p><%= link_to "Delete", bike_path(bike),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %></p>
+            </div>
+          </div>
+          <div class="card-bike-link">
+          <%= link_to "", bike_path(bike), :class => "card-link" %>
+        </div>
+      </div>
+      <%end %>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
