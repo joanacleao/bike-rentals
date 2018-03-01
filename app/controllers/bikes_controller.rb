@@ -1,4 +1,6 @@
 class BikesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:search, :show]
+
   def index
 
   end
@@ -9,7 +11,7 @@ class BikesController < ApplicationController
 
   def create
 
-    @bike=Bike.new(bike_params)
+    @bike = Bike.new(bike_params)
 
     if @bike.save
       redirect_to root_path
@@ -24,7 +26,15 @@ class BikesController < ApplicationController
 
 
   def show
+
+
+    if current_user.nil?
+      session[:foo] = params[:id]
+    end
+
+
     @bike = Bike.find(params[:id])
+
     @markers = [{
       lat: @bike.latitude,
       lng: @bike.longitude
