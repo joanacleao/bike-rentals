@@ -4,7 +4,8 @@
   justify-content: space-between;
   padding: 5px;
   background: white;
-  border-top: 1px solid #f4f4f4;
+
+  margin-top: 70px;
 }
 
 
@@ -17,12 +18,12 @@
 
 .btn-treehouse {
   color: black;
-  padding: 7.5px 12.5px;
+  padding: 7px 12px;
   border-radius: 4px;
   font-weight: lighter;
-  background: white;
+  background: #f4f4f4;
   transition: background 0.3s ease;
-  font-size: 12px;
+  font-size: 13px;
   border: 1px solid #f4f4f4;
 }
 .btn-treehouse:hover {
@@ -34,6 +35,11 @@
 
 }
 
-
+.btn{
+  font-size: 13px;
+  padding: 7px 12px;
+  border-radius: 4px;
+  font-weight: lighter;
+}
 
 
