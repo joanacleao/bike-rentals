@@ -5,22 +5,40 @@ class BikesController < ApplicationController
 
   def new
     @bike = Bike.new
+
   end
 
   def create
 
-    @bike=Bike.new(bike_params)
+    @bike = Bike.new(bike_params)
+    @bike.user = current_user
 
     if @bike.save
-      redirect_to root_path
+      redirect_to bikes_mybikes_path, notice: "Your bike has been created!"
     else
-      render :new
+      render :new, alert: "Could not save your bike!"
     end
   end
 
   def edit
+    @bike = Bike.find(params[:id])
   end
 
+  def update
+
+    @bike = Bike.find(params[:id])
+    if @bike.update(bike_params)
+      redirect_to root_path, notice: "Your bike has been update!"
+    else
+      render :edit, alert: "Could not update your bike!"
+    end
+  end
+
+
+  def mybikes
+
+    @bikes = current_user.bikes
+  end
 
 
   def show
@@ -55,6 +73,13 @@ class BikesController < ApplicationController
 
 
  def destroy
+
+
+    @bike = Bike.find(params[:id])
+    @bike.destroy
+    redirect_to bikes_mybikes_path
+
+
  end
 
  private

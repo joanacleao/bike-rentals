@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get 'bikes/show'
 
+  get 'bikes/mybikes' , to: 'bikes#mybikes'
+
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
