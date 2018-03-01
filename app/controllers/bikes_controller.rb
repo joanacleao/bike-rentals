@@ -8,7 +8,14 @@ class BikesController < ApplicationController
   end
 
   def create
+
     @bike=Bike.new(bike_params)
+
+    if @bike.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -18,28 +25,22 @@ class BikesController < ApplicationController
 
   def show
     @bike = Bike.find(params[:id])
-        @markers = [{
-        lat: @bike.latitude,
-        lng: @bike.longitude
+    @markers = [{
+      lat: @bike.latitude,
+      lng: @bike.longitude
         #,
         # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
-      }]
+        }]
 
-  end
+      end
 
-  def search
+      def search
 
     #raise
     @bikes = Bike.where.not(latitude: nil, longitude: nil)
     search = params[:search]
 
-
-
-      @bikes = @bikes.where(spec: search) if search.present?
-
-
-
-
+    @bikes = @bikes.where(spec: search) if search.present?
 
     @markers = @bikes.map do |bike|
      {
@@ -50,17 +51,17 @@ class BikesController < ApplicationController
    end
 
 
-  end
+ end
 
 
-  def destroy
-  end
+ def destroy
+ end
 
-  private
+ private
 
-  def bike_params
-    params.require(:bike).permit(:brand, :description, :city, :address, :price, :spec, :photo)
-  end
+ def bike_params
+  params.require(:bike).permit(:brand, :description, :city, :address, :price, :spec, :photo)
+end
 
 
 end
