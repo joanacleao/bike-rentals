@@ -1,4 +1,9 @@
 <h1>Bookings#create</h1>
 <p>Find me in app/views/bookings/create.html.erb</p>
+<p>Current user id:<%=  current_user.id%></p>
+
+
 <p>Start date:<%= @booking.start_date %></p>
 <p>End date:<%= @booking.end_date %></p>
+<p>Number of days: <%= ((@booking.end_date - @booking.start_date).to_i)%></p>
+<p>Total Booking Price:<%= ((@booking.end_date - @booking.start_date).to_i) * @booking.bike.price %></p>
