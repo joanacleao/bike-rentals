@@ -1,2 +1,32 @@
-<h1>Bikes#edit</h1>
-<p>Find me in app/views/bikes/edit.html.erb</p>
+
+<div class = "container" style= "margin-top: 70px">
+
+  <h1 class= "title">New Bike</h1>
+
+  <div class="row new-bike">
+    <div class="col-xs-4">
+      <%= simple_form_for @bike do |f| %>
+      <div class='form-inputs'>
+        <div>
+          <%= f.input :brand %>
+          <%= f.input :spec %>
+          <%= f.input :description %>
+        </div>
+
+        <div>
+          <%= f.input :city %>
+          <%= f.input :address%>
+          <%= f.input :price %>
+          <%= f.input :photo %>
+        </div>
+
+
+
+      </div>
+      <div class= "form-actions">
+        <%= f.button :submit %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
