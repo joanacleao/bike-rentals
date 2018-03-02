@@ -9,6 +9,7 @@ class ReviewsController < ApplicationController
   def create
      @review = Review.new(review_params)
      @review.booking = @booking
+     @review.bike_id = @bike
      if @review.save
        redirect_to bike_booking_review_path(@bike, @booking, @review)
      else

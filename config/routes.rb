@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get 'bikes/show'
 
+  get 'dashboard/show'
 
   devise_for :users,
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }

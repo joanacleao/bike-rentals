@@ -1,0 +1,39 @@
+
+<div class="container">
+  <div class="bike-profile">
+    <div class="main">
+      <div class="main-content">
+        <div class= "title-show">
+        </div>
+        <div class="row">
+          <div class="photo-show" style="background-image: url(<%= @user.photo %>) ;" >
+          </div>
+          <div class="info-bike-show">
+            <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+            <p>Email: <%= @user.email %></p>
+            <p>City: Lisbon</p>
+            <p><%= link_to "Edit Your Profile", edit_user_registration_path%></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <% @user.bikes.each do |bike| %>
+              <div class="mini-card-bike">
+                <div class="mini-card-bike-photo"  style="background-image: url('<%= image_path(bike.photo)%>');">
+                </div>
+                <div class="mini-card-bike-description">
+                 <p><strong><%= bike.spec.upcase%></strong></p>
+                  <p><%= bike.brand%></p>
+                  <p><%= bike.description%></p>
+                  <p><%= bike.address%></p>
+                  <p><%=bike.price %> € per day</p>
+                </div>
+              </div>
+                </div>
+                <% end %>
+                </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
