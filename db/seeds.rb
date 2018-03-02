@@ -8,6 +8,8 @@
 
 Bike.destroy_all
 User.destroy_all
+Booking.destroy_all
+Review.destroy_all
 
 user_1 = User.create!(email:"shannon@gmail.com", password: 123456, first_name: "Shannon", last_name: "Graybill", remote_photo_url: "http://res.cloudinary.com/dywzzd0as/image/upload/v1519818199/15787238.jpg")
 user_2 = User.create(email:"carlos@hotmail.com", password: 123456, first_name: "Carlos", last_name: "Mendes", remote_photo_url: "http://res.cloudinary.com/dywzzd0as/image/upload/v1519818291/185615.jpg" )
@@ -50,4 +52,29 @@ bike_12 = Bike.new(brand: "Batavus", spec: "mountain", description:"Hi-Tensile s
 bike_12.user = user_2
 bike_12.save!
 
+booking_1 = Booking.new()
+booking_1.user = user_1;
+booking_1.bike = bike_3;
+booking_1.save!
+booking_2 = Booking.new()
+booking_2.user = user_2;
+booking_2.bike = bike_1;
+booking_2.save!
+booking_3 = Booking.new()
+booking_3.user = user_3;
+booking_3.bike = bike_2;
+booking_3.save!
+
+review_1 = Review.new(rating: 3, comment: "A good bike. A bit overpriced!")
+review_1.bike_id = 3
+review_1.booking = booking_1
+review_1.save!
+review_2 = Review.new(rating: 4, comment: "Nice bike!")
+review_2.bike_id = 1
+review_2.booking = booking_2
+review_2.save!
+review_3 = Review.new(rating: 1, comment: "Shitty experience!")
+review_3.bike_id = 2
+review_3.booking = booking_3
+review_3.save!
 
