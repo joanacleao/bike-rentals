@@ -11,6 +11,11 @@
 
     <script type="text/javascript">
         //////Para que o valor min a inserir seja o dia de hoje
+
+
+
+
+
         var today = new Date();
         var dd = today.getDate();
         var mm = today.getMonth()+1; //January is 0!
@@ -46,10 +51,19 @@
             time = time/24/3600/1000;
             var totalPrice = <%= @bike.price %> * time;
             document.getElementById("demo").innerHTML ='Total Price: '+totalPrice+'&euro;';
+            //enable button Book me
+            const element = document.getElementById("BookMe");
+            console.log(element);
+            element.disabled = false;
           }
         });
     </script>
-  <input type="submit" class= "btn btn-primary" value="Book me">
+  <input type="submit" class= "btn btn-primary" value="Book me" id="BookMe">
+  <script>
+        const element = document.getElementById("BookMe");
+        console.log(element);
+        element.disabled = true;
+  </script>
   </div>
 </form>
 
