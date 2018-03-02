@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
      @review.booking = @booking
      @review.bike_id = @bike
      if @review.save
-       redirect_to bike_booking_review_path(@bike, @booking, @review)
+       redirect_to bike_path(@bike)
      else
        render :new
      end
