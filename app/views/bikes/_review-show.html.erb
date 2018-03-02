@@ -4,10 +4,11 @@
     <div class="row">
       <div class="col-md-12">
 
-        <%= @bike.reviews.each do |review| %>
-        <h1><%= review.comment %></h1>
+        <% @bike.reviews.each do |review| %>
+        <h3><%= review.booking.user.first_name %></h3>
+        <h4><%= review.comment %></h4>
+        <img class="card-user" src="<%= image_path(review.booking.user.photo)%>">
         <div class="review-stars">
-          <% review.rating = rand(1..5)%>
           <% review.rating.times do %>
           <i class="fa fa-star" style="color: #ffb400"></i>
           <% end %>
