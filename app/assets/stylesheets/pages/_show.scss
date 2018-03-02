@@ -10,7 +10,7 @@
 .bike-profile {
   display: grid;
   grid-template-columns: 850px 1fr ;
-  // background-color: #F4F4F4;
+  background-color: #F4F4F4;
 }
  // grid-template-rows: 50% 50%;
 //   height: calc(100vh - 260px);
@@ -25,10 +25,10 @@
 //   grid-column: 4 / span 1;
 // }
 .main {
-  margin-top:70px;
+  // margin-top:70px;
   background: white;
   // box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  padding: 10px;
+  padding-top: 70px;
   // margin-bottom: 5px;
   display: flex;
   align-items: top;
@@ -38,12 +38,13 @@
 
 
 
+
 #demo {
   margin: 10px;
   color: #248888;
 }
 .map-1 {
-  width: 810px;
+  width: 830px;
   height: 300px;
   margin: 8px;
 
@@ -70,6 +71,11 @@
   margin: 10px;
   p{
     font-size: 20px;
+    font-family: helvetica
+  }
+  h3 {
+    font-size: 40px;
+    color: grey;
   }
 }
 
