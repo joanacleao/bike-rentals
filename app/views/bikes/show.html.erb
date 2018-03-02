@@ -6,7 +6,7 @@
     <div class="main">
       <div class="main-content">
         <div class= "title-show">
-          <h1><%=@bike.brand %> from user_id: <%= @bike.user_id %></h1>
+          <h1><%=@bike.brand %></h1>
         </div>
         <div class="row">
           <div class="photo-show" style="background-image: url(<%= image_path(@bike.photo)%>);" ></div>
@@ -26,13 +26,12 @@
             <div id="map" style="width: 100%; height: 100%; margin-bottom: 10px;" data-markers="<%= @markers.to_json %>">
             </div>
           </div>
-
         </div>
         <div class="row">
-          <div class="text-center" style="margin: 10px;">
-            <%= link_to "Back", :back, {class: "btn btn-primary"}%>
-          </div>
-        </div>
+      <div class="reviews">
+       <p><%= render 'review-show' %></p>
+      </div>
+    </div>
       </div>
     </div>
     <div class="booking">
@@ -40,9 +39,9 @@
         <h3>Booking Form</h3>
         <%= render 'booking-form' %>
         <!-- <a href="" class="btn btn-primary">Book</a> -->
-
       </div>
     </div>
+
   </div>
 
 </div>
