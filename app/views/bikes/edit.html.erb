@@ -3,30 +3,8 @@
 
   <h1 class= "title">New Bike</h1>
 
-  <div class="row new-bike">
-    <div class="col-xs-4">
-      <%= simple_form_for @bike do |f| %>
-      <div class='form-inputs'>
-        <div>
-          <%= f.input :brand %>
-          <%= f.input :spec %>
-          <%= f.input :description %>
-        </div>
+  <div class="row edit-bike">
 
-        <div>
-          <%= f.input :city %>
-          <%= f.input :address%>
-          <%= f.input :price %>
-          <%= f.input :photo %>
-        </div>
-
-
-
-      </div>
-      <div class= "form-actions">
-        <%= f.button :submit %>
-      </div>
-      <% end %>
-    </div>
+       <%= render 'form_bikes' %>
   </div>
 </div>
