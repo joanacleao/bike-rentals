@@ -4,29 +4,9 @@
   <h1 class= "title">New Bike</h1>
   <div class="row new-bike">
 
-    <div class="col-xs-12">
-      <%= simple_form_for @bike do |f| %>
-      <div class='form-inputs'>
-        <div class= "form-bike">
-          <div class="col-md-6">
-            <%= f.input :brand %>
-            <%= f.input :spec %>
-            <%= f.input :description %>
-            <%= f.input :price %>
-          </div>
-          <div class="col-md-6">
-            <%= f.input :city %>
-            <%= f.input :address%>
-            <%= f.input :photo %>
-            <%= f.input :photo_cache, as: :hidden %>
-            <div class= "form-actions btn-form">
-              <%= f.button :submit %>
-            </div>
-          </div>
-        </div>
-      </div>
-      <% end %>
-    </div>
+    <%= render 'form_bikes' %>
+
+
   </div>
 </div>
 

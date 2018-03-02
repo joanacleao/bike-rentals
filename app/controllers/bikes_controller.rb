@@ -42,7 +42,6 @@ class BikesController < ApplicationController
     @bikes = current_user.bikes
   end
 
-
   def show
 
 
@@ -63,6 +62,8 @@ class BikesController < ApplicationController
       end
 
       def search
+
+
 
     #raise
     @bikes = Bike.where.not(latitude: nil, longitude: nil)
