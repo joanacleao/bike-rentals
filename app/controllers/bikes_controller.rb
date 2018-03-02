@@ -45,9 +45,6 @@ class BikesController < ApplicationController
 
   def mybookings
 
-
-
-
     @bookings = current_user.bookings
 
     @bikes = current_user.bikes

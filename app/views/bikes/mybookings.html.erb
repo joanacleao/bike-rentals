@@ -2,7 +2,7 @@
 
 
   <div class="container" style= "margin-top: 80px">
-    <p style="font-size: 20px;"><strong>Hello <%= current_user.id %>!</strong> Here you can find all your bookings: </p>
+    <p style="font-size: 20px;"><strong>Hello <%= current_user.first_name %>!</strong> Here you can find all your bookings: </p>
     <div class="bookings-all">
 
 
@@ -27,14 +27,12 @@
               <div class= "card-book-price">
                 <p>Total price:</p>
                 <p><%= book.bike.price%> €</p>
+              </br>
+              <p><p><%= link_to "Add Review", new_bike_booking_review_path(book, book.bike) %></p></p>
               </div>
                </div>
           <%end %>
            </div>
-
-
-
-
 
 
         <div class="others-bookings">
