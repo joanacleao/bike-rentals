@@ -42,6 +42,22 @@ class BikesController < ApplicationController
     @bikes = current_user.bikes
   end
 
+
+  def mybookings
+
+
+
+
+    @bookings = current_user.bookings
+
+    @bikes = current_user.bikes
+
+  end
+
+
+
+
+
   def show
 
 
