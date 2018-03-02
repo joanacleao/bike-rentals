@@ -52,15 +52,15 @@ bike_12 = Bike.new(brand: "Batavus", spec: "mountain", description:"Hi-Tensile s
 bike_12.user = user_2
 bike_12.save!
 
-booking_1 = Booking.new()
+booking_1 = Booking.new(start_date: "12-03-2018", end_date:"20-03-2018")
 booking_1.user = user_1;
 booking_1.bike = bike_3;
 booking_1.save!
-booking_2 = Booking.new()
+booking_2 = Booking.new(start_date: "12-03-2018", end_date:"15-03-2018")
 booking_2.user = user_2;
 booking_2.bike = bike_1;
 booking_2.save!
-booking_3 = Booking.new()
+booking_3 = Booking.new(start_date: "12-03-2018", end_date:"13-03-2018")
 booking_3.user = user_3;
 booking_3.bike = bike_2;
 booking_3.save!

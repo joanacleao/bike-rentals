@@ -28,7 +28,7 @@
                 <p>Total price:</p>
                 <p><%= book.bike.price%> €</p>
               </br>
-              <p><p><%= link_to "Add Review", new_bike_booking_review_path(book, book.bike) %></p></p>
+              <p><p><%= link_to "Add Review", new_bike_booking_review_path(book.bike.id, book) %></p></p>
               </div>
                </div>
           <%end %>
