@@ -1,0 +1,68 @@
+  <h1>mybookings</h1>
+
+
+  <div class="container" style= "margin-top: 80px">
+    <p style="font-size: 20px;"><strong>Hello <%= current_user.id %>!</strong> Here you can find all your bookings: </p>
+    <div class="bookings-all">
+
+
+      <div class="my-bookings">
+
+        <p style="font-size: 20px;"><strong>As a user:</strong></p>
+        <% @bookings.each do |book| %>
+            <!-- insert <div class="card"> -->
+            <div class="card-book">
+              <div class="card-book-photo" style="background-image: url('<%= image_path(book.bike.photo)%>');">
+              </div>
+              <div class="card-book-dates">
+                <p> <%= book.start_date%></p>
+                </br>
+                <p> <%= book.end_date%></p>
+              </div>
+              <div class="card-book-description">
+                <p><strong><%= book.bike.spec.upcase%></strong> | <%= book.bike.city%></p>
+                </br>
+                <p><%= book.bike.brand%></p>
+              </div>
+              <div class= "card-book-price">
+                <p>Total price:</p>
+                <p><%= book.bike.price%> €</p>
+              </div>
+               </div>
+          <%end %>
+           </div>
+
+
+
+
+
+
+        <div class="others-bookings">
+          <p style="font-size: 20px;"><strong>As a owner:</strong></p>
+
+          <% @bikes.each do |bike| %>
+          <% bike.bookings.each do |book| %>
+            <!-- insert <div class="card"> -->
+            <div class="card-book">
+              <div class="card-book-photo" style="background-image: url('<%= image_path(book.bike.photo)%>');">
+              </div>
+              <div class="card-book-dates">
+                <p> <%= book.start_date%></p>
+                </br>
+                <p> <%= book.end_date%></p>
+              </div>
+              <div class="card-book-description">
+                <p><strong><%= book.bike.spec.upcase%></strong> | <%= book.bike.city%></p>
+                </br>
+                <p><%= book.bike.brand%></p>
+              </div>
+              <div class= "card-book-price">
+              <p>Total price:</p>
+              <p><%= book.bike.price%> €</p>
+              </div>
+            </div>
+            <%end %>
+            <%end %>
+        </div>
+    </div>
+  </div>
