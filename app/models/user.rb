@@ -7,9 +7,9 @@ class User < ApplicationRecord
     #:recoverable, :rememberable, :trackable, :validatable
 
 
-  has_many :bookings
-  has_many :bikes
-  has_many :reviews, through: :bookings
+  has_many :bookings, dependent: :destroy
+  has_many :bikes, dependent: :destroy
+  has_many :reviews, through: :bookings, dependent: :destroy
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
