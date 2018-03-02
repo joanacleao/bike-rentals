@@ -6,12 +6,12 @@
     <div class="main">
       <div class="main-content">
         <div class= "title-show">
-          <h1><%=@bike.brand %></h1>
+          <h3><%= @bike.description %></h3>
         </div>
         <div class="row">
           <div class="photo-show" style="background-image: url(<%= image_path(@bike.photo)%>);" ></div>
           <div class="info-bike-show">
-            <h3><%= @bike.description %></h3>
+            <h3><%= @bike.brand %></h3>
             <p>Spec: <%= @bike.spec %></p>
             <p>Brand: <%= @bike.brand %></p>
             <p><%= @bike.user.email %></p>
@@ -28,21 +28,24 @@
           </div>
         </div>
         <div class="row">
-      <div class="reviews">
-       <p><%= render 'review-show' %></p>
-      </div>
-    </div>
-      </div>
-    </div>
-    <div class="booking">
-      <div class="booking-content">
-        <h3>Booking Form</h3>
-        <%= render 'booking-form' %>
-        <!-- <a href="" class="btn btn-primary">Book</a> -->
-      </div>
-    </div>
 
+          <div class="reviews">
+
+            <%= render 'review-show' %>
+
+         </div>
+       </div>
+     </div>
+   </div>
+   <div class="booking">
+    <div class="booking-content">
+      <h3>Booking Form</h3>
+      <%= render 'booking-form' %>
+      <!-- <a href="" class="btn btn-primary">Book</a> -->
+    </div>
   </div>
+
+</div>
 
 </div>
 

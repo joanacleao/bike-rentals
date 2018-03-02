@@ -1,7 +1,25 @@
+<div class="container">
+  <h2>Reviews</h2>
+  <div class="content-review">
+    <div class="row">
+      <div class="col-md-12">
+        <p>nbihbwedivjcbwdjsbcksubfk</p>
+        <%= @bike.reviews.each do |review| %>
+        <h1><%= review.comment %></h1>
+        <div class="review-stars">
+          <% review.rating = rand(1..5)%>
+          <% review.rating.times do %>
+          <i class="fa fa-star" style="color: #ffb400"></i>
+          <% end %>
+          <% (5 - review.rating).times do %>
+          <i class="fa fa-star" style="color: #cacccd"></i>
+          <% end %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
-
-<%= @bike.reviews.each do |review| %>
-<h1><%= review.comment %></h1>
-<% end %>
 
 
