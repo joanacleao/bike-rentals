@@ -1,18 +1,15 @@
 <div class="all-container">
-<%= render 'filters' %>
-<div class="main-container">
-  <div class="card-container">
-    <%= render 'card' %>
+  <%= render 'filters' %>
+  <div class="main-container">
+    <div class="card-container">
+      <%= render 'card' %>
+    </div>
+
+    <div
+    id="map"
+    data-markers="<%= @markers.to_json %>"
+    ></div>
   </div>
-  <div
-  id="map"
-  data-markers="<%= @markers.to_json %>"
-  ></div>
-</div>
-</div>
-
-
-
-
+  </div>
 
 
