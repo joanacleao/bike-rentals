@@ -8,18 +8,16 @@ class ReviewsController < ApplicationController
 
   def create
      @review = Review.new(review_params)
-     @review.save
-     raise
-     # redirect_to bike_booking_path(@bike, @booking)
-
-      # if @review.save
-      #   # redirect_to @booking
-      # else
-      #   render :new
-      # end
+     @review.booking = @booking
+     if @review.save
+       redirect_to bike_booking_review_path(@bike, @booking, @review)
+     else
+       render :new
+     end
   end
 
   def show
+    @review = Review.find(params[:id])
   end
 
   private
